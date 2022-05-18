@@ -1,0 +1,1 @@
+[04-Dec-2018 09:54:44 UTC] PHP Fatal error:  Call to undefined function add_action() in /home/typograp/public_html/lawrencebrown.eu/wp-content/themes/larryworld/inc/customizer.php on line 29
