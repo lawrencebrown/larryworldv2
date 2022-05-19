@@ -26,52 +26,51 @@ get_header(); ?>
 	    });
 	 });
 	</script>
-<content class="wide">
-		
-		
-		<div class="single-photo">
-		<?php the_content(); ?>
-			<?php if( have_rows('photos') ): ?>
-				<?php while( have_rows('photos') ): the_row();
-    				$image = get_sub_field('add_image'); ?>
-        			<img src="<?php echo $image['url']; ?>" class="image-on-own-page">
-    			<?php endwhile; ?>		    			
-			<?php endif; ?>
-		</div>
+<content>	
+	<div class="single-photo">
+	<?php the_content(); ?>
+		<?php if( have_rows('photos') ): ?>
+			<?php while( have_rows('photos') ): the_row();
+				$image = get_sub_field('add_image'); ?>
+    			<img src="<?php echo $image['url']; ?>" class="image-on-own-page">
+			<?php endwhile; ?>		    			
+		<?php endif; ?>
+	</div>
 
 
-			<div class="embed-container">
-				<?php the_field('video'); ?>
-			</div>
+	<div class="embed-container">
+		<?php the_field('video'); ?>
+	</div>
 </content>
-		<hr class="full-width no-margin">
-<content class="wide">
-		<div class="photo-metadata">
-			<p><?php the_title(); ?> <?php the_field('caption'); ?> <?php echo get_the_date('M Y'); ?></p>
-			<?php
-				if( get_the_tags() ){
-		        echo '<div class="tags">';
-		        the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>');
-		        echo '</div>';
-		        }
-		    ;?> 
-		 </div>
-
-
-	    		
-		<div class="photo-navigation-container">		
-			<div class="next">
-				<?php next_post_link('%link','<'); ?>
-			</div>
-			<div class="back-link">
-	    		<a href="/photos">All Photos</a>
-	    	</div>
-			<div class="prev">
-				<?php previous_post_link('%link','>'); ?>    
-			</div>
-		</div>	
-			
 	
+<hr class="full-width no-margin">
+	
+<content>
+	<div class="photo-metadata">
+		<p><?php the_title(); ?>. <span class="space-mono yellow">
+			<?php echo get_the_date('M y'); ?><span></p>
+		<?php
+			//if( get_the_tags() ){
+	        //echo '<div class="tags">';
+	        //the_tags('<ul class="tags"><li>', '</li><li>', '</li></ul>');
+	        //echo '</div>';
+	        //}
+	   	?> 
+	 </div>
+
+
+    		
+	<div class="photo-navigation-container">		
+		<div class="next">
+			<?php next_post_link('%link','<'); ?>
+		</div>
+		<div class="back-link">
+    		<a href="/photos">All Photos</a>
+    	</div>
+		<div class="prev">
+			<?php previous_post_link('%link','>	'); ?>    
+		</div>
+	</div>				
 </content>
 <?php
 get_sidebar();

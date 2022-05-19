@@ -299,7 +299,12 @@ span.edit {
 
 
 /*TYPOGRAPHY */
-
+/*
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*/
 h1,h2,h3,h4,h5,h6,p,content ul {
 	font-family: 'Inter', sans-serif;	
 	color: #585555;
@@ -336,7 +341,8 @@ p{
 	color: #585555;
 	font-size: 16px;
 	line-height: 26px;
-	margin-bottom: 1.5em;	
+	margin-bottom: 1.5em;
+	font-weight: 400;
 }
 
 p strong {
@@ -349,6 +355,16 @@ span.lighter-text {
 
 article content:first-child > h1 {
 	margin-bottom: 0;
+}
+
+span.space-mono {
+	font: 15px 'Space Mono', monospace;
+	text-transform: uppercase;
+	margin-left: 5px;
+}
+
+.yellow {
+	color: #E2B40F;
 }
 
 span.note-panel {
@@ -422,6 +438,7 @@ nav.footer ul li a{
 	text-decoration: none;
 	font-size: 16px;
 	color: #888888;
+	width: 100%;
 	font-weight: 400;
 	display: block;
 	color: #888888;
@@ -754,10 +771,22 @@ header.entry-header ul.tags{
 
 
 /* PHOTOS FEATURE STYLES ONLY - VAST IMPROVMENT NEEDED FOR RESPONSIVE*/
-
+div.single-photo {
+	margin-top: 18px;
+	float: left;
+}
 
 div.photo-navigation-container {
-	float: right;
+	float: left;
+	margin-bottom: 100px;
+}
+
+div.photo-metadata {
+	margin-top: 20px;	
+}
+
+div.photo-metadata p {
+	margin-bottom: 1em;
 }
 
 div.next {
@@ -886,6 +915,10 @@ li.photo-link a:hover img {
 	
 	div.unique-photo-container {
 		margin: 10px;
+	}
+	
+	div.single-photo {
+		margin-top: -20px;		
 	}
 }
 
