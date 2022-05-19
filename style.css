@@ -317,8 +317,8 @@ h1{
 
 h2 {
 	font-size: 22px;
-	line-height: 34px;
-	margin-bottom: 21px;
+	line-height: 28px;
+	margin-bottom: 5px;
 	color: #282626;	
 	font-weight: 800;
 	
@@ -599,9 +599,14 @@ a.blue-button {
 	background: #2694F9;
 	border-radius: 8px;
 	color: #fff;
-	font-size: 13px;
+	font-size: 14px;
+	font-weight: 400;
 	padding: 8px 14px;
 	text-decoration: none;
+}
+
+a.blue-button:hover {
+	background: #4aa6f0;
 }
 
 summary {
@@ -645,6 +650,10 @@ h2.entry-title {
 	padding-bottom: 0px;
 }
 
+content img {
+	height: auto;
+    max-width: 100%;
+}
 
 [style*="--aspect-ratio"] > :first-child {
   width: 100%;
