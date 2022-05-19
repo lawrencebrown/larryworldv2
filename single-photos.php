@@ -27,7 +27,7 @@ get_header(); ?>
 	 });
 	</script>
 <content class="wide">
-	<div class="all-photos-container">	
+		
 		
 		<div class="single-photo">
 		<?php the_content(); ?>
@@ -43,12 +43,11 @@ get_header(); ?>
 			<div class="embed-container">
 				<?php the_field('video'); ?>
 			</div>
-
-
+</content>
+		<hr class="full-width no-margin">
+<content class="wide">
 		<div class="photo-metadata">
-			<h2><?php the_title(); ?></h2>
-			<p><?php the_field('caption'); ?></p>
-			<p><?php echo get_the_date('M Y'); ?></p>
+			<p><?php the_title(); ?> <?php the_field('caption'); ?> <?php echo get_the_date('M Y'); ?></p>
 			<?php
 				if( get_the_tags() ){
 		        echo '<div class="tags">';
@@ -59,21 +58,20 @@ get_header(); ?>
 		 </div>
 
 
-	    <div class="back-link">
-	    	<a href="/photos">&larr; View All Photos</a>
-	    </div>
-		    
-
+	    		
 		<div class="photo-navigation-container">		
 			<div class="next">
-				<?php next_post_link('%link','&larr;'); ?>
+				<?php next_post_link('%link','<'); ?>
 			</div>
+			<div class="back-link">
+	    		<a href="/photos">All Photos</a>
+	    	</div>
 			<div class="prev">
-				<?php previous_post_link('%link','&rarr;'); ?>    
+				<?php previous_post_link('%link','>'); ?>    
 			</div>
 		</div>	
 			
-	</div><!--all-photos-container-->
+	
 </content>
 <?php
 get_sidebar();

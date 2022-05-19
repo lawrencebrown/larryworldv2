@@ -217,3 +217,30 @@ function meks_which_template_is_loaded() {
 	}
 }
 
+//Rewrites the CSS in the WP menu to allow custom post types to have correct parent classes rather than default to the main posts as parent
+
+function theme_current_type_nav_class($css_class, $item) {
+    static $custom_post_types, $post_type, $filter_func;
+
+    if (empty($custom_post_types))
+        $custom_post_types = get_post_types(array('_builtin' => false));
+
+    if (empty($post_type))
+        $post_type = get_post_type();
+
+    if ('page' == $item->object && in_array($post_type, $custom_post_types)) {
+        $css_class = array_filter($css_class, function($el) {
+            return $el !== "current_page_parent";
+        });
+
+        $template = get_page_template_slug($item->object_id);
+        if (!empty($template) && preg_match("/^page(-[^-]+)*-$post_type/", $template) === 1)
+            array_push($css_class, 'current_page_parent');
+
+    }
+
+    return $css_class;
+}
+add_filter('nav_menu_css_class', 'theme_current_type_nav_class', 1, 2);
+
+// END

@@ -755,6 +755,55 @@ header.entry-header ul.tags{
 
 /* PHOTOS FEATURE STYLES ONLY - VAST IMPROVMENT NEEDED FOR RESPONSIVE*/
 
+
+div.photo-navigation-container {
+	float: right;
+}
+
+div.next {
+	background-color: #e6e6e6;
+	padding: 5px;
+	float: left;
+	border-radius: 5px 0px 0px 5px;
+	height: 28px;
+}
+
+div.next:hover,
+div.prev:hover {
+	background-color: #d4d4d4;
+}
+
+div.prev {
+	background-color: #e6e6e6;
+	padding: 5px;
+	float: left;
+	border-radius: 0px 5px 5px 0px;
+	height: 28px;
+}
+
+div.back-link {
+	background-color: #f2f2f2;
+	padding: 10px 10px 5px 10px;
+	float: left;
+	height: 23px;
+}
+
+div.next a,
+div.prev a  {
+	text-decoration: none;
+	color: #8d8d8d;
+	font: 23px 'Inter', sans-serif;
+	font-weight: 400;
+}
+
+div.back-link a {
+	text-decoration: none;
+	color: #8d8d8d;
+	font: 14px 'Inter', sans-serif;
+	font-weight: 400;
+}
+
+
 div.all-photos-container  {
 	margin-left: auto;
 	margin-right: auto;
@@ -788,9 +837,8 @@ ul li.photo-link {
 } 
 
 img.image-on-own-page {
-	width:100%;
-    height:100%;
-    object-fit:cover;	
+	width: auto;
+  	max-height: 70vh;
 }
 
 li.photo-link a:hover img {
