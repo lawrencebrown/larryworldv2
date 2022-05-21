@@ -57,15 +57,13 @@ get_header(); ?>
 	        //}
 	   	?> 
 	 </div>
-
-
     		
 	<div class="photo-navigation-container">		
 		<div class="next">
 			<?php next_post_link('%link','<'); ?>
 		</div>
 		<div class="back-link">
-    		<a href="/photos">All Photos</a>
+    		<a href="/photos">View All</a>
     	</div>
 		<div class="prev">
 			<?php previous_post_link('%link','>	'); ?>    
